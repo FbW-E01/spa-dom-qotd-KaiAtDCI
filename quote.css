@@ -1,0 +1,40 @@
+body {
+    margin: 1rem;
+}
+
+.header {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#quote-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5rem;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+
+.quote {
+    display: inline-block;
+}
+
+.author {
+    display: inline-block;
+}
+
+.separator {
+    display: inline-block;
+}
+
+input {
+    margin: 1rem;
+    background-color: white;
+}
+
+
+
