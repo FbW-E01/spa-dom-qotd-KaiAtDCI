@@ -4,19 +4,17 @@ const QUOTES = [
     { quote: `Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the results of other people's thinking.`, author: `Steve Jobs` },
 ];
 
-
 function getRandomQuote (quotes) {
     const numberOfQuotes = quotes.length;
     const quoteNumber = Math.floor(Math.random() * numberOfQuotes);
     return quotes[quoteNumber];
 }
 
-function createQuoteHTML(quote) {
+function createQuoteHTML({quote, author}) {
     return `
       <div class="quote-wrapper">
-        <div class="quote">${quote.quote}</div>
-        <div class="separator">&nbsp-&nbsp;</div>
-        <div class="author">${quote.author}</div>
+        <div class="quote">${quote}</div>
+        <div class="author">&nbsp;-&nbsp;${author}</div>
       </div>
     `;
 }
@@ -28,8 +26,11 @@ function insertRandomQuote() {
     quoteWrapper.insertAdjacentHTML('beforeend', createQuoteHTML(quote));
 }
 
-document.addEventListener('DOMContentLoaded', () => insertRandomQuote());
-document.getElementById('randomQuoteButton').addEventListener('click', () => insertRandomQuote());
+document.addEventListener('DOMContentLoaded', () => {
+    insertRandomQuote();
+    const randomQuoteButton = document.getElementById('randomQuoteButton');
+    randomQuoteButton.addEventListener('click', () => insertRandomQuote());
+});
 
 
 
